@@ -12,8 +12,13 @@ Config = {
     -- extras will toggle below this speed
     speedThreshold = 1,
 
-    -- health threashold disables this effect while vehicle is damaged to prevent unrealistic repairs upon crashing
+    -- health threshold disables this effect while vehicle is damaged to prevent unrealistic repairs upon crashing
     healthThreshold = 970, -- 999 would disable effect with ANY damage to vehicle, between 850-999 are good values
+
+    -- time between checks in seconds
+    -- should not need to be any lower than .5 seconds
+    -- higher values may look more realistic
+    delay = 1.5,
 
     vehicles = {
         -- pExtras = Extras enabled while parked

@@ -55,6 +55,6 @@ CreateThread(function()
             end
             
         end
-        Wait(1000)
+        Wait(Config.delay*1000)
     end
 end)
