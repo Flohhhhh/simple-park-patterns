@@ -6,8 +6,11 @@ Simply add resource to your resources folder and add ``ensure park-patterns`` to
 
 # Config
 ``useKPH`` = DUH
+
 ``speedThreshold`` = below this speed, extras on the vehicle will switch states
+
 ``healthThreshold`` = below this vehicle body health, the effect is disabled
+
 ``vehicles`` Example
 ```{spawnName='police1', pExtras={1,2 }, dExtras={3}},```
 
