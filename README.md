@@ -13,25 +13,9 @@ Simply add resource to your resources folder and add ``ensure park-patterns`` to
 
 ``healthThreshold`` = below this vehicle body health, the effect is disabled
 
+``delay`` = time between checks, should not need to be any lower than .5 seconds, higher values may look more realistic
+
 ``vehicles`` Example
 ```{spawnName='police1', pExtras={1,2 }, dExtras={3}},```
 
-```lua
--- CONFIG VALUES
-Config = {
-
-    useKPH = false,
-
-    -- extras will toggle below this speed
-    speedThreshold = 1,
-
-    -- health threashold disables this effect while vehicle is damaged to prevent unrealistic repairs upon crashing
-    healthThreshold = 970, -- 999 would disable effect with ANY damage to vehicle, between 850-999 are good values
-
-    vehicles = {
-        -- pExtras = Extras enabled while parked
-        -- dExtras = Extras enabled while driving
-        -- EXAMPLE {spawnName='helloworld', pExtras={1, 2}, dExtras={3}},
-        {spawnName='', pExtras={}, dExtras={}},
-    }
-}```
+![image](https://user-images.githubusercontent.com/48927090/204310646-4f2e59b9-50b4-4ad0-b48c-753e5b0603b2.png)
