@@ -3,7 +3,6 @@
 function GetVehicleFromTableByVehicleId(vehicle)
     for k,v in pairs(Config.vehicles) do
         if GetEntityModel(vehicle) == GetHashKey(v.spawnName) then
-            print("Got: " .. v.spawnName)
             return true, v
         end
     end
@@ -15,9 +14,6 @@ CreateThread(function()
         
         local veh = GetVehiclePedIsIn(PlayerPedId())
         local passed, vehConfig = GetVehicleFromTableByVehicleId(veh)
-
-        print(passed)
-        print(vehConfig)
 
         if passed then
             local speed = 0
