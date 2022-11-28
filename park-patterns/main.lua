@@ -26,7 +26,6 @@ CreateThread(function()
                     speed = GetEntitySpeed(Entity(veh)) * 2.236936
                 end
 
-                print(speed)
                 -- if slow
                 if speed < Config.speedThreshold then
                     -- enable pExtras
