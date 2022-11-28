@@ -5,6 +5,12 @@ A FiveM resource that can be used by vehicle developers to create park patterns 
 Simply add resource to your resources folder and add ``ensure park-patterns`` to your server.cfg
 
 # Config
+``useKPH`` = DUH
+``speedThreshold`` = below this speed, extras on the vehicle will switch states
+``healthThreshold`` = below this vehicle body health, the effect is disabled
+``vehicles`` Example
+```{spawnName='police1', pExtras={1,2 }, dExtras={3}},```
+
 ```lua
 -- CONFIG VALUES
 Config = {
