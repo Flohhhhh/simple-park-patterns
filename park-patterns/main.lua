@@ -98,14 +98,11 @@ local myVehParked = false
 function GetVehicleFromTableByVehicleId(vehicle)
     for k,v in pairs(Config.vehicles) do
         -- find which vehicle matches
-        if GetEntityModel(vehicle) == GetHashKey(v.name) then
-            -- check if vehicle is set to use park patterns
-            if v.parkConfig.usePark then
-                return true, v
-            else
-                print("Vehicle [" .. v.name .. "] not set to use park patterns.")
-            end
-        end
+        if GetEntityModel(vehicle) == GetHashKey(v.spawnName) then
+            return true, v
+        else
+			print("Vehicle [" .. v.spawnName .. "] not found.")
+		end
     end
 end
 
@@ -168,19 +165,17 @@ AddEventHandler('uls:vehPark', function()
 
     local passed, vehConfig = GetVehicleFromTableByVehicleId(veh)
     local vehHealth = GetVehicleBodyHealth(veh)
-    
-    if Lights then
-        if passed and AreChecksPassed() then
-            -- enable pExtras
-            for k,v in pairs(vehConfig.parkConfig.pExtras) do
-                SetVehicleExtra(veh, v, 0)
-            end
-            -- disable dExtras
-            for k,v in pairs(vehConfig.parkConfig.dExtras) do
-                SetVehicleExtra(veh, v, 1)
-            end
-        end
-    end
+
+	if passed and AreChecksPassed() then
+		-- enable pExtras
+		for k,v in pairs(vehConfig.pExtras) do
+			SetVehicleExtra(veh, v, 0)
+		end
+		-- disable dExtras
+		for k,v in pairs(vehConfig.dExtras) do
+			SetVehicleExtra(veh, v, 1)
+		end
+	end
 end)
 
 AddEventHandler('uls:vehDrive', function()
@@ -190,16 +185,14 @@ AddEventHandler('uls:vehDrive', function()
     local passed, vehConfig = GetVehicleFromTableByVehicleId(veh)
     local vehHealth = GetVehicleBodyHealth(veh)
 
-    if Lights then 
-        if passed and AreChecksPassed() then
-            -- disable pExtras
-            for k,v in pairs(vehConfig.parkConfig.pExtras) do
-                SetVehicleExtra(veh, v, 1)
-            end
-            -- enable dExtras
-            for k,v in pairs(vehConfig.parkConfig.dExtras) do
-                SetVehicleExtra(veh, v, 0)
-            end
-        end
-    end
+	if passed and AreChecksPassed() then
+		-- disable pExtras
+		for k,v in pairs(vehConfig.pExtras) do
+			SetVehicleExtra(veh, v, 1)
+		end
+		-- enable dExtras
+		for k,v in pairs(vehConfig.dExtras) do
+			SetVehicleExtra(veh, v, 0)
+		end
+	end
 end)
