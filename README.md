@@ -18,6 +18,6 @@ Simply add resource to your resources folder and add ``ensure park-patterns`` to
 ``delay`` = time between checks, should not need to be any lower than .5 seconds, higher values may look more realistic
 
 ``vehicles`` Example
-```{spawnName='police1', pExtras={1,2 }, dExtras={3}},```
+```{spawnName='police1', pExtras={1,2}, dExtras={3}},```
 
-![image](https://user-images.githubusercontent.com/48927090/204310646-4f2e59b9-50b4-4ad0-b48c-753e5b0603b2.png)
+![image](https://user-images.githubusercontent.com/48927090/206566973-f07ccb4e-f065-4acf-b41a-43cb6ac633c6.png)
