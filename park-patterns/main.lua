@@ -96,7 +96,7 @@ local myVehParked = false
 
 -- functions
 function GetVehicleFromTableByVehicleId(vehicle)
-    for k,v in pairs(Config.Vehicles) do
+    for k,v in pairs(Config.vehicles) do
         -- find which vehicle matches
         if GetEntityModel(vehicle) == GetHashKey(v.name) then
             -- check if vehicle is set to use park patterns
