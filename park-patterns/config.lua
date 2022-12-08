@@ -15,10 +15,13 @@ Config = {
     -- health threshold disables this effect while vehicle is damaged to prevent unrealistic repairs upon crashing
     healthThreshold = 970, -- 999 would disable effect with ANY damage to vehicle, between 850-999 are good values
 
+    -- check if any doors are fully open before executing effect (prevents doors from always snapping shut)
+    checkDoors = true,
+
     -- time between checks in seconds
     -- should not need to be any lower than .5 seconds
     -- higher values may look more realistic
-    delay = 1.5,
+    delay = 0.5,
 
     vehicles = {
         -- pExtras = Extras enabled while parked
