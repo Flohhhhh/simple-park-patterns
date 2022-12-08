@@ -114,20 +114,15 @@ function AreChecksPassed()
     if Config.checkDoors then
         for i = 0, numberOfDoors, 1 do
             if GetVehicleDoorAngleRatio(veh, i) > 0.0 then
-                print("[AreChecksPassed] Door " .. i .. " is open.")
                 areDoorsOpen = true
                 break
             end
         end
     end
-    
-    print("[AreChecksPassed] Are doors open: " .. tostring(areDoorsOpen))
 
     if vehHealth > Config.healthThreshold and not areDoorsOpen then
-        print("[AreChecksPassed()] Checks passed.")
         return true
     else
-        print("[AreChecksPassed()] Checks failed.")
         return false
     end
 end
@@ -160,7 +155,6 @@ CreateThread(function()
 end)
 
 AddEventHandler('uls:vehPark', function()
-    print('[uls:vehPark] My vehicle parked.')
     myVehParked = true
 
     local passed, vehConfig = GetVehicleFromTableByVehicleId(veh)
@@ -179,7 +173,6 @@ AddEventHandler('uls:vehPark', function()
 end)
 
 AddEventHandler('uls:vehDrive', function()
-    print('[uls:vehDrive] My vehicle is driving.')
     myVehParked = false
 
     local passed, vehConfig = GetVehicleFromTableByVehicleId(veh)
