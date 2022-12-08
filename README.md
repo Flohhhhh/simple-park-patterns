@@ -13,6 +13,8 @@ Simply add resource to your resources folder and add ``ensure park-patterns`` to
 
 ``healthThreshold`` = below this vehicle body health, the effect is disabled
 
+``checkDoors`` = when true, effect is disabled while a door is open (prevents doors/trunk/hood snapping shut)
+
 ``delay`` = time between checks, should not need to be any lower than .5 seconds, higher values may look more realistic
 
 ``vehicles`` Example

@@ -16,6 +16,7 @@ Config = {
     healthThreshold = 970, -- 999 would disable effect with ANY damage to vehicle, between 850-999 are good values
 
     -- check if any doors are fully open before executing effect (prevents doors from always snapping shut)
+    -- this also works for hood and trunk
     checkDoors = true,
 
     -- time between checks in seconds

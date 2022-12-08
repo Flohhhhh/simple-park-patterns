@@ -1,96 +1,3 @@
-
--- -- functions
--- function GetVehicleFromTableByVehicleId(vehicle)
---     for k,v in pairs(Config.vehicles) do
---         if GetEntityModel(vehicle) == GetHashKey(v.spawnName) then
---             return true, v
---         end
---     end
--- end
-
--- -- thread
--- CreateThread(function()
---     while true do
-        
---         local veh = GetVehiclePedIsIn(PlayerPedId())
---         local passed, vehConfig = GetVehicleFromTableByVehicleId(veh)
-
---         if passed then
---             local speed = 0
---             local vehHealth = GetVehicleBodyHealth(veh)
-                
---             if vehHealth > Config.healthThreshold then
---                 if Config.useKPH then
---                     speed = GetEntitySpeed(Entity(veh)) * 3.6
---                 else
---                     speed = GetEntitySpeed(Entity(veh)) * 2.236936
---                 end
-
---                 -- if slow
---                 if speed < Config.speedThreshold then
---                     -- enable pExtras
---                     for k,v in pairs(vehConfig.pExtras) do
---                         SetVehicleExtra(veh, v, 0)
---                     end
---                     -- disable dExtras
---                     for k,v in pairs(vehConfig.dExtras) do
---                         SetVehicleExtra(veh, v, 1)
---                     end
---                 -- if fast
---                 else
---                     -- disable pExtras
---                     for k,v in pairs(vehConfig.pExtras) do
---                         SetVehicleExtra(veh, v, 1)
---                     end
---                     -- enable dExtras
---                     for k,v in pairs(vehConfig.dExtras) do
---                         SetVehicleExtra(veh, v, 0)
---                     end
---                 end
---             end
-            
---         end
---         Wait(Config.delay*1000)
---     end
--- end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 local veh = GetVehiclePedIsIn(PlayerPedId())
 local myVehParked = false
 
@@ -127,6 +34,8 @@ function AreChecksPassed()
     end
 end
 
+
+-- Thread
 CreateThread(function()
     while true do
         if IsPedInAnyVehicle(PlayerPedId()) then
